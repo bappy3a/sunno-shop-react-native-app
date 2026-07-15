@@ -13,6 +13,11 @@ module.exports = {
         muted: "#707F81",
         surface: "#F6F6F6",
       },
+      fontFamily: {
+        inter: ["Inter_400Regular"],
+        "inter-semibold": ["Inter_600SemiBold"],
+        "inter-bold": ["Inter_700Bold"],
+      },
     },
   },
   plugins: [],
