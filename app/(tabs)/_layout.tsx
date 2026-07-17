@@ -14,20 +14,18 @@ const TabLayout = () => {
     const insets = useSafeAreaInsets();
 
     const TabIcon = ({ focused, iconName, icon }: { focused: boolean, iconName: any, icon: string }) => {
-        if (icon === 'Feather') {
-            return (
-                <View className={`h-10 w-10  flex items-center justify-center rounded-full ${focused ? 'bg-surface' : ''}`}>
-                    <Feather name={iconName} size={24} color={focused ? "black" : "gray"} />
-                </View>
-            );
-        } else {
-            return (
-                <View>
-                    <FontAwesome5 name={iconName} size={30} color={focused ? "black" : "gray"} />
-                </View>
-            );
-        }
+        const IconComponent = icon === 'Feather' ? Feather : FontAwesome5;
+        const iconSize = icon === 'Feather' ? 24 : 24;
 
+        return (
+            <View className={`h-11 w-11 flex items-center justify-center rounded-full ${focused ? 'bg-surface' : ''}`}>
+                <IconComponent
+                    name={iconName}
+                    size={iconSize}
+                    color={focused ? colors.primary : "rgba(255, 255, 255, 0.5)"}
+                />
+            </View>
+        );
     }
 
     return (
@@ -36,7 +34,7 @@ const TabLayout = () => {
             tabBarShowLabel: false,
             tabBarStyle: {
                 position: 'absolute',
-                bottom: Math.max(insets.bottom, tabBar.bottomInset),
+                bottom: insets.bottom > 0 ? insets.bottom - 12 : 8,
                 height: tabBar.height,
                 marginHorizontal: tabBar.horizontalInset,
                 borderRadius: tabBar.radius,
@@ -45,12 +43,14 @@ const TabLayout = () => {
                 elevation: 0,
             },
             tabBarItemStyle: {
-                paddingVertical: tabBar.height / 2 - tabBar.iconFrame / 1.6
+                justifyContent: 'center',
+                alignItems: 'center',
             },
             tabBarIconStyle: {
                 width: tabBar.iconFrame,
                 height: tabBar.iconFrame,
-                alignItems: 'center'
+                justifyContent: 'center',
+                alignItems: 'center',
             }
         }}>
             <Tabs.Screen name="index" options={{ title: "Home", tabBarIcon: ({ focused }) => (<TabIcon focused={focused} iconName="home" icon="Feather" />) }} />
