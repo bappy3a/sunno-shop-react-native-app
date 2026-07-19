@@ -1,7 +1,14 @@
-import HomeSlider from "@/components/homeSlider";
+import HomeCategorys from "@/components/home/homeCategorys";
+import HomeSlider from "@/components/home/homeSlider";
 import Octicons from "@expo/vector-icons/Octicons";
 import React from "react";
-import { ScrollView, TextInput, TouchableOpacity, View } from "react-native";
+import {
+  ScrollView,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
 const Index = () => {
   return (
     <ScrollView className="h-full bg-white p-4">
@@ -22,6 +29,17 @@ const Index = () => {
 
       <View className="w-full mt-4">
         <HomeSlider />
+      </View>
+      <View className="w-full mt-8">
+        <View className="mb-4 flex flex-row items-center justify-between">
+          <Text className="font-inter-bold text-2xl text-ink">Category</Text>
+          <TouchableOpacity>
+            <Text className="text-brand text-md ">See All</Text>
+          </TouchableOpacity>
+        </View>
+        <View className="flex flex-row flex-wrap justify-between">
+          <HomeCategorys />
+        </View>
       </View>
     </ScrollView>
   );
