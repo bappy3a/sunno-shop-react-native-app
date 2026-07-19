@@ -41,6 +41,16 @@ const Index = () => {
           <HomeCategorys />
         </View>
       </View>
+      <View className="w-full mt-8">
+        <View className="mb-4 flex flex-row items-center justify-between">
+          <Text className="font-inter-bold text-2xl text-ink">Flash Sele</Text>
+          <View className="flex flex-row gap-2 items-center">
+            <Text className="text-md text-[#818181]">Closing in: </Text>
+            <Text className="text-brand text-md font-semibold">00:00:00</Text>
+          </View>
+        </View>
+        <View className="flex flex-row flex-wrap justify-between"></View>
+      </View>
     </ScrollView>
   );
 };
