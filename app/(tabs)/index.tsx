@@ -95,7 +95,7 @@ const Index = () => {
             ))}
           </ScrollView>
         </View>
-        <View className="">
+        <View className="mt-4 w-full flex-row flex-wrap justify-between">
           {PRODUCTS.slice(0, 10).map((product, index) => (
             <Product key={index} product={product} />
           ))}
