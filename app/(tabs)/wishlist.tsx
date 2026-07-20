@@ -1,14 +1,17 @@
-import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import SafeAreaView from "@/components/SafeAreaView";
+import React, { Component } from "react";
+import { Text, View } from "react-native";
 
 export class Wishlist extends Component {
   render() {
     return (
-      <View>
-        <Text>Wishlist</Text>
-      </View>
-    )
+      <SafeAreaView>
+        <View>
+          <Text>This is a wishlist page</Text>
+        </View>
+      </SafeAreaView>
+    );
   }
 }
 
-export default Wishlist
+export default Wishlist;

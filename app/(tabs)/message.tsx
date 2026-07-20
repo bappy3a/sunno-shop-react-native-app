@@ -1,12 +1,15 @@
-import React from 'react';
-import { Text, View } from 'react-native';
+import SafeAreaView from "@/components/SafeAreaView";
+import React from "react";
+import { Text, View } from "react-native";
 
 const Message = () => {
   return (
-    <View>
-      <Text>Message</Text>
-    </View>
-  )
-}
+    <SafeAreaView>
+      <View>
+        <Text>This is a message page</Text>
+      </View>
+    </SafeAreaView>
+  );
+};
 
-export default Message
+export default Message;
